@@ -1,0 +1,168 @@
+**THE PASSPHRASE IS cece198@gmail.com**
+
+________________________________________________________
+Last login: Mon Mar 25 20:16:40 on console
+
+hon-2016292:~ ceceliamauro$ git --version
+
+git version 2.21.0
+hon-2016292:~ ceceliamauro$ git --version
+git version 2.21.0
+
+hon-2016292:~ ceceliamauro$ ssh-keygen -t rsa -C "cece198@gmail.com"
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/ceceliamauro/.ssh/id_rsa): 
+Created directory '/Users/ceceliamauro/.ssh'.
+
+Enter passphrase (empty for no passphrase): 
+
+Enter same passphrase again: 
+
+Your identification has been saved in /Users/ceceliamauro/.ssh/id_rsa.
+Your public key has been saved in /Users/ceceliamauro/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:IXjBil80xbQhGR7yMb2ucj4kACbnBZu9U7hCR2hUeDM cece198@gmail.com
+The key's randomart image is:
++---[RSA 2048]----+
+| .o=+.BB+        |
+|o.==E*=*oo       |
+|o=++==*.o.       |
+| .+..=....       |
+|  .o+. .S        |
+|   .o.. .        |
+|     o .         |
+|    . +          |
+|     +..         |
++----[SHA256]-----+
+
+hon-2016292:~ ceceliamauro$ ~/.ssh/id_rsa.pub
+
+-bash: /Users/ceceliamauro/.ssh/id_rsa.pub: Permission denied
+hon-2016292:~ ceceliamauro$ ~/.ssh/id_rsa.pub
+-bash: /Users/ceceliamauro/.ssh/id_rsa.pub: Permission denied
+hon-2016292:~ ceceliamauro$ ~/.ssh/id_rsa.pub
+-bash: /Users/ceceliamauro/.ssh/id_rsa.pub: Permission denied
+hon-2016292:~ ceceliamauro$ sudo ~/.ssh/id_rsa.pub
+Password:
+sudo: /Users/ceceliamauro/.ssh/id_rsa.pub: command not found
+
+hon-2016292:~ ceceliamauro$ sudo cat ~/.ssh/id_rsa.pub
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5zVCx/gI8xdimDc9CcBc104vyyJWwmfQhVzJLiCFOjKx7tRytMomEBfDAWoWvqBSwot2A83jKdI6VRr6onfhh6ROy+fzeZ29Umo+U0I2/6rP7x1Nn0TfxvNKd1ctR5raL6HnAKEH8o1swOv4TMjd2EDPl+ygBfdu8at7NGsYXvm76xyW0Qk1smUAykdpOBPRCOpQR6KDOhZ1SgWx6/WD4v5vjBPRRk77xwH29B2rtEJfEzNz0YCMgTvUm3DRyORzOrFbeXenxeVsuEa0dc1+H8JpFBEn8hj39JxwdRpdwiEMc+q2ls3Ogo3GNqrUzsMVgEmZo+3djf+G1BV8AiD6x cece198@gmail.com
+
+hon-2016292:~ ceceliamauro$ ssh -T git@github.com
+
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Enter passphrase for key '/Users/ceceliamauro/.ssh/id_rsa': 
+Hi cece198! You've successfully authenticated, but GitHub does not provide shell access.
+
+hon-2016292:~ ceceliamauro$ git config --global 
+user.name "Cecelia"
+
+hon-2016292:~ ceceliamauro$ git config --global user.email "cece198@gmail.com"
+
+hon-2016292:~ ceceliamauro$ cd ~/Documents
+
+hon-2016292:Documents ceceliamauro$ mkdir CSC225_March28
+
+hon-2016292:Documents ceceliamauro$ cd CSC225_March28
+
+hon-2016292:CSC225_March28 ceceliamauro$ pwd
+
+/Users/ceceliamauro/Documents/CSC225_March28
+
+hon-2016292:CSC225_March28 ceceliamauro$ ls -lsa
+
+total 0
+0 drwxr-xr-x   2 ceceliamauro  staff   64 Mar 28 19:23 .
+0 drwx------+ 16 ceceliamauro  staff  512 Mar 28 19:23 ..
+hon-2016292:CSC225_March28 ceceliamauro$ git clone git@github.com:cece198/practice225.git .
+Cloning into '.'...
+Enter passphrase for key '/Users/ceceliamauro/.ssh/id_rsa': 
+warning: You appear to have cloned an empty repository.
+hon-2016292:CSC225_March28 ceceliamauro$ git status
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+hon-2016292:CSC225_March28 ceceliamauro$ code .
+-bash: code: command not found
+hon-2016292:CSC225_March28 ceceliamauro$ code .
+-bash: code: command not found
+hon-2016292:CSC225_March28 ceceliamauro$ code.
+-bash: code.: command not found
+hon-2016292:CSC225_March28 ceceliamauro$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	css/
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+hon-2016292:CSC225_March28 ceceliamauro$ git add index.html
+hon-2016292:CSC225_March28 ceceliamauro$ git add css/
+hon-2016292:CSC225_March28 ceceliamauro$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   css/style.css
+	new file:   index.html
+
+hon-2016292:CSC225_March28 ceceliamauro$ git commit -m"First commit"
+[master (root-commit) b71feea] First commit
+ 2 files changed, 25 insertions(+)
+ create mode 100644 css/style.css
+ create mode 100644 index.html
+hon-2016292:CSC225_March28 ceceliamauro$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   css/style.css
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hon-2016292:CSC225_March28 ceceliamauro$ git add css/
+hon-2016292:CSC225_March28 ceceliamauro$ git add index.html
+hon-2016292:CSC225_March28 ceceliamauro$ git commit -m"Changed background color"
+[master a404259] Changed background color
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+hon-2016292:CSC225_March28 ceceliamauro$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+hon-2016292:CSC225_March28 ceceliamauro$ git remote -v
+origin	git@github.com:cece198/practice225.git (fetch)
+origin	git@github.com:cece198/practice225.git (push)
+hon-2016292:CSC225_March28 ceceliamauro$ git branch
+* master
+hon-2016292:CSC225_March28 ceceliamauro$ git push origin master
+Warning: Permanently added the RSA host key for IP address '192.30.253.113' to the list of known hosts.
+Enter passphrase for key '/Users/ceceliamauro/.ssh/id_rsa': 
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (10/10), 1.38 KiB | 469.00 KiB/s, done.
+Total 10 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:cece198/practice225.git
+ * [new branch]      master -> master
+hon-2016292:CSC225_March28 ceceliamauro$ 
